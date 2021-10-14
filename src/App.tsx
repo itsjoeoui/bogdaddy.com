@@ -4,8 +4,12 @@ import "./App.css";
 import { DefaultButton } from "@fluentui/react";
 import { Stack, IStackTokens } from "@fluentui/react/lib/Stack";
 import { ThemeProvider } from "@fluentui/react/lib/Theme";
+import dayjs from "dayjs";
+dayjs().format();
 
 const geolocation: Geolocation = navigator.geolocation;
+
+const enddate: dayjs.Dayjs = dayjs("2021-12-21");
 
 const verticalGapStackTokens: IStackTokens = {
   childrenGap: 10,
@@ -17,6 +21,9 @@ function App() {
   const [lng, setLng] = useState<number>();
   const [loc, setLoc] = useState<boolean>();
 
+  const currentdate: dayjs.Dayjs = dayjs();
+
+  const countdown: number = enddate.diff(currentdate, "days");
   function getLocation() {
     if (geolocation) {
       geolocation.getCurrentPosition(findLocal, showError);
@@ -49,6 +56,7 @@ function App() {
             </a>
             <DefaultButton onClick={() => getLocation()}>Suicide</DefaultButton>
             <p>
+              <b>Semester Count: {countdown + 1}</b>
               {loc ? (
                 <p>
                   Bogdaddy is on his way
