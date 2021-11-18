@@ -9,8 +9,6 @@ dayjs().format();
 
 const geolocation: Geolocation = navigator.geolocation;
 
-const enddate: dayjs.Dayjs = dayjs("2021-12-21");
-
 const verticalGapStackTokens: IStackTokens = {
   childrenGap: 10,
   padding: 10,
@@ -23,7 +21,10 @@ function App() {
 
   const currentdate: dayjs.Dayjs = dayjs();
 
-  const countdown: number = enddate.diff(currentdate, "days");
+  const biology: number = dayjs("2021-12-14").diff(currentdate, "days");
+  const physics: number = dayjs("2021-12-20").diff(currentdate, "days");
+  const math: number = dayjs("2021-12-22").diff(currentdate, "days");
+
   function getLocation() {
     if (geolocation) {
       geolocation.getCurrentPosition(findLocal, showError);
@@ -52,11 +53,15 @@ function App() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Coming soon...
+              ↓ ↓ ↓
             </a>
             <DefaultButton onClick={() => getLocation()}>Suicide</DefaultButton>
             <p>
-              <b>Semester Count: {countdown + 1}</b>
+              <b>Bio Final: {biology + 1} day(s)</b>
+              <br />
+              <b>E&M Final: {physics + 1} day(s)</b>
+              <br />
+              <b>Linear Final: {math + 1} day(s)</b>
               {loc ? (
                 <p>
                   Bogdaddy is on his way
