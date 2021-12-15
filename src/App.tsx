@@ -21,7 +21,6 @@ function App() {
 
   const currentdate: dayjs.Dayjs = dayjs();
 
-  const biology: number = dayjs("2021-12-14").diff(currentdate, "days");
   const physics: number = dayjs("2021-12-20").diff(currentdate, "days");
   const math: number = dayjs("2021-12-22").diff(currentdate, "days");
 
@@ -57,8 +56,6 @@ function App() {
             </a>
             <DefaultButton onClick={() => getLocation()}>Suicide</DefaultButton>
             <p>
-              <b>Bio Final: {biology + 1} day(s)</b>
-              <br />
               <b>E&M Final: {physics + 1} day(s)</b>
               <br />
               <b>Linear Final: {math + 1} day(s)</b>
