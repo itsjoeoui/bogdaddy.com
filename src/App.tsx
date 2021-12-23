@@ -21,7 +21,7 @@ function App() {
 
   const currentdate: dayjs.Dayjs = dayjs();
 
-  const math: number = dayjs("2021-12-22").diff(currentdate, "days");
+  const math: number = dayjs("2022-01-20").diff(currentdate, "days");
 
   function getLocation() {
     if (geolocation) {
@@ -55,7 +55,7 @@ function App() {
             </a>
             <DefaultButton onClick={() => getLocation()}>Suicide</DefaultButton>
             <p>
-              <b>Linear Final: {math + 1} day(s)</b>
+              <b>4th semester starts in: {math + 1} day(s)</b>
               {loc ? (
                 <p>
                   Bogdaddy is on his way
