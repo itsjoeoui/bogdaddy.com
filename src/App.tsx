@@ -21,7 +21,7 @@ function App() {
 
   const currentdate: dayjs.Dayjs = dayjs();
 
-  const math: number = dayjs("2022-01-20").diff(currentdate, "days");
+  const sem: number = dayjs("2022-05-30").diff(currentdate, "days");
 
   function getLocation() {
     if (geolocation) {
@@ -38,6 +38,7 @@ function App() {
       alert(error.message);
     }
   }
+
   return (
     <ThemeProvider>
       <div className="App" onLoad={() => getLocation()}>
@@ -55,7 +56,7 @@ function App() {
             </a>
             <DefaultButton onClick={() => getLocation()}>Suicide</DefaultButton>
             <p>
-              <b>4th semester starts in: {math + 1} day(s)</b>
+              <b>4th semester ends in: {sem + 1} day(s)</b>
               {loc ? (
                 <p>
                   Bogdaddy is on his way
